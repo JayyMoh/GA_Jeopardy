@@ -8,68 +8,75 @@ console.log('JS is connected')
 // const cat_5 = document.querySelector('.cat-5')
 
 // Variables for Category 1s Question Boxes 
-const cat_1_100 = document.querySelector('.cat-1-100')
-const cat_1_200 = document.querySelector('.cat-1-200')
-const cat_1_300 = document.querySelector('.cat-1-300')
-const cat_1_400 = document.querySelector('.cat-1-400')
-const cat_1_500 = document.querySelector('.cat-1-500')
+const sports_100 = document.querySelector('.cat-1-100')
+const sports_200 = document.querySelector('.cat-1-200')
+const sports_300 = document.querySelector('.cat-1-300')
+const sports_400 = document.querySelector('.cat-1-400')
+const sports_500 = document.querySelector('.cat-1-500')
 
 // Variables for Category 2s Question Boxes 
-const cat_2_100 = document.querySelector('.cat-2-100')
-const cat_2_200 = document.querySelector('.cat-2-200')
-const cat_2_300 = document.querySelector('.cat-2-300')
-const cat_2_400 = document.querySelector('.cat-2-400')
-const cat_2_500 = document.querySelector('.cat-2-500')
+const foodDrink_100 = document.querySelector('.cat-2-100')
+const foodDrink_200 = document.querySelector('.cat-2-200')
+const foodDrink_300 = document.querySelector('.cat-2-300')
+const foodDrink_400 = document.querySelector('.cat-2-400')
+const foodDrink_500 = document.querySelector('.cat-2-500')
 
 // Variables for Category 3s Question Boxes 
-const cat_3_100 = document.querySelector('.cat-3-100')
-const cat_3_200 = document.querySelector('.cat-3-200')
-const cat_3_300 = document.querySelector('.cat-3-300')
-const cat_3_400 = document.querySelector('.cat-3-400')
-const cat_3_500 = document.querySelector('.cat-3-500')
+const theatre_100 = document.querySelector('.cat-3-100')
+const theatre_200 = document.querySelector('.cat-3-200')
+const theatre_300 = document.querySelector('.cat-3-300')
+const theatre_400 = document.querySelector('.cat-3-400')
+const theatre_500 = document.querySelector('.cat-3-500')
 
 // Variables for Category 4s Question Boxes 
-const cat_4_100 = document.querySelector('.cat-4-100')
-const cat_4_200 = document.querySelector('.cat-4-200')
-const cat_4_300 = document.querySelector('.cat-4-300')
-const cat_4_400 = document.querySelector('.cat-4-400')
-const cat_4_500 = document.querySelector('.cat-4-500')
+const music_100 = document.querySelector('.cat-4-100')
+const music_200 = document.querySelector('.cat-4-200')
+const music_300 = document.querySelector('.cat-4-300')
+const music_400 = document.querySelector('.cat-4-400')
+const music_500 = document.querySelector('.cat-4-500')
 
 // Variables for Category 5s Question Boxes 
-const cat_5_100 = document.querySelector('.cat-5-100')
-const cat_5_200 = document.querySelector('.cat-5-200')
-const cat_5_300 = document.querySelector('.cat-5-300')
-const cat_5_400 = document.querySelector('.cat-5-400')
-const cat_5_500 = document.querySelector('.cat-5-500')
+const fourLetterWords_100 = document.querySelector('.cat-5-100')
+const fourLetterWords_200 = document.querySelector('.cat-5-200')
+const fourLetterWords_300 = document.querySelector('.cat-5-300')
+const fourLetterWords_400 = document.querySelector('.cat-5-400')
+const fourLetterWords_500 = document.querySelector('.cat-5-500')
 
-// Create the Board array
+// Board array
 const jeopardyBoard = [
-    cat_1_100,
-    cat_1_200,
-    cat_1_300,
-    cat_1_400,
-    cat_1_500,
-    cat_2_100,
-    cat_2_200,
-    cat_2_300,
-    cat_2_400,
-    cat_2_500,
-    cat_3_100,
-    cat_3_200,
-    cat_3_300,
-    cat_3_400,
-    cat_3_500,
-    cat_4_100,
-    cat_4_200,
-    cat_4_300,
-    cat_4_400,
-    cat_4_500,
-    cat_5_100,
-    cat_5_200,
-    cat_5_300,
-    cat_5_400,
-    cat_5_500,
+    sports_100,
+    sports_200,
+    sports_300,
+    sports_400,
+    sports_500,
+    foodDrink_100,
+    foodDrink_200,
+    foodDrink_300,
+    foodDrink_400,
+    foodDrink_500,
+    theatre_100,
+    theatre_200,
+    theatre_300,
+    theatre_400,
+    theatre_500,
+    music_100,
+    music_200,
+    music_300,
+    music_400,
+    music_500,
+    fourLetterWords_100,
+    fourLetterWords_200,
+    fourLetterWords_300,
+    fourLetterWords_400,
+    fourLetterWords_500,
 ]
+
+// Arrays for the categories
+const sportsArray = [sports_100, sports_200, sports_300, sports_400, sports_500]
+const foodDrinkArray = [foodDrink_100, foodDrink_200, foodDrink_300, foodDrink_400, foodDrink_500]
+const theatreArray = [theatre_100, theatre_200, theatre_300, theatre_400, theatre_500]
+const musicArray = [music_100, music_200, music_300, music_400, music_500]
+const fourLetterWordsArray = [fourLetterWords_100, fourLetterWords_200, fourLetterWords_300, fourLetterWords_400, fourLetterWords_500]
 
 const startGame = () => {
     for (i = 0; i < jeopardyBoard.length; i++) {
