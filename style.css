@@ -1,0 +1,41 @@
+body {
+    background-color: aliceblue;
+}
+
+#header {
+    text-align: center;
+}
+
+#game-board-container {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 90%;
+    height: auto;
+    background-color: gray;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.board-item {
+    padding: 10px;
+    width: 15%;
+    min-height: 150px;
+    border: 2px solid black;
+    background-color: gray;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+/* Category Boxes */
+.category {
+    background-color: blue;
+}
+
+/* Question Boxes */
+.question-box {
+    background-color: rgb(32, 92, 255);
+}
