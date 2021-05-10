@@ -1,12 +1,5 @@
 console.log('JS is connected')
 
-// // Variables for the Category Boxes
-// const cat_1 = document.querySelector('.cat-1')
-// const cat_2 = document.querySelector('.cat-2')
-// const cat_3 = document.querySelector('.cat-3')
-// const cat_4 = document.querySelector('.cat-4')
-// const cat_5 = document.querySelector('.cat-5')
-
 // Variables for Category 1s Question Boxes 
 const sports_100 = document.querySelector('.cat-1-100')
 const sports_200 = document.querySelector('.cat-1-200')
@@ -42,53 +35,86 @@ const fourLetterWords_300 = document.querySelector('.cat-5-300')
 const fourLetterWords_400 = document.querySelector('.cat-5-400')
 const fourLetterWords_500 = document.querySelector('.cat-5-500')
 
-// Board array
-const jeopardyBoard = [
-    sports_100,
-    sports_200,
-    sports_300,
-    sports_400,
-    sports_500,
-    foodDrink_100,
-    foodDrink_200,
-    foodDrink_300,
-    foodDrink_400,
-    foodDrink_500,
-    theatre_100,
-    theatre_200,
-    theatre_300,
-    theatre_400,
-    theatre_500,
-    music_100,
-    music_200,
-    music_300,
-    music_400,
-    music_500,
-    fourLetterWords_100,
-    fourLetterWords_200,
-    fourLetterWords_300,
-    fourLetterWords_400,
-    fourLetterWords_500,
-]
+// Varibales for the Modal
+const modal_question = document.getElementById('question-text')
+const modal_answer = document.getElementById('answer-text') 
+const modal = document.getElementById('modal')
+const closeBtn = document.getElementById('close')
+const submitBtn = document.getElementById('submit-button')
+const playerAnswer = document.getElementById('player-answer')
 
-// Arrays for the categories
-const sportsArray = [sports_100, sports_200, sports_300, sports_400, sports_500]
-const foodDrinkArray = [foodDrink_100, foodDrink_200, foodDrink_300, foodDrink_400, foodDrink_500]
-const theatreArray = [theatre_100, theatre_200, theatre_300, theatre_400, theatre_500]
-const musicArray = [music_100, music_200, music_300, music_400, music_500]
-const fourLetterWordsArray = [fourLetterWords_100, fourLetterWords_200, fourLetterWords_300, fourLetterWords_400, fourLetterWords_500]
 
+const questionObject = {
+        Q1: {   
+                category: 'sports',
+                value: 100, 
+                question: 'What company\'s logo is a swoosh?', 
+                answer: 'Nike',
+        },    
+        Q2: {
+                category: 'sports',
+                value: 200, 
+                question: 'What do you call it when a bowler makes three strikes in a row?', 
+                answer: 'Turkey',
+        },
+        Q3: {
+                category: 'sports',
+                value: 300, 
+                question: 'The Olympics are held every how many years?', 
+                answer: 'Four',
+        },
+        Q4: {
+                category: 'sports',
+                value: 400, 
+                question: 'What is the national sport of Canada?', 
+                answer: 'Lacrosse',
+        },
+        Q5: {
+                category: 'sports',
+                value: 500, 
+                question: 'Who has won more tennis grand slam titles, Venus Williams or Serena Williams?',
+                answer: 'Serena Williams'
+        }
+}
+
+
+const openModal = () => {
+    modal.style.display = 'block'
+}
+
+const closeModal = () => {
+    modal.style.display = 'none'
+}
+
+const checkAnswer = (e) => {
+    if (playerAnswer === e.currentTarget.answer) {
+        // increase points properly 
+        //close the model
+        //make the question box on the board go away
+    }
+}
+
+closeBtn.addEventListener('click', closeModal)
+submitBtn.addEventListener('click', checkAnswer)
+// const question = questionObject.
+// const getQuestion = () => {
+//     for (let i = 0; i < questionObject.value.length; i++) {
+//         let 
+//     }
+// }
+
+let click = 0
 const startGame = () => {
-    for (i = 0; i < jeopardyBoard.length; i++) {
-        jeopardyBoard[i].addEventListener('click', (e) => {
-            if (e.currentTarget === cat_5_500) {
-                console.log('You have selected Category 5, for 500 Points')
-            } else {
-                console.log('That is not cat 5')
+    document.querySelectorAll('.question-box').forEach((box) => {
+        box.addEventListener('click', (e) => {
+            click++
+            if (e.currentTarget === sports_100 && click === 1) {
+                modal_question.innerText = questionObject.Q1.question
+                openModal()
             }
         })
-    }
-     
+    })
 }
+
 
 startGame()
