@@ -59,6 +59,22 @@
         <div class="board-item cat-3-500 question-box">500</div>
         <div class="board-item cat-4-500 question-box">500</div>
         <div class="board-item cat-5-500 question-box">500</div>
+        <!-- question modal -->
+        <div id="modal">
+            <div id="modal-textbox">
+                <div id="question-container">
+                    <div id="question-text"></div>
+                    <div id="answer-text"></div>
+                </div>
+                <form id="answer-form">
+                    Answer: <input type="text" id="player-answer" placeholder="Answer Here">
+                    <input type="button" id="submit-button" onclick="checkAnswer()" value="Submit">
+                </form>
+                <div id="modal-footer">
+                    <button class="modal-buttons" id="close" href="#">Close</a>
+                </div>      
+            </div>
+        </div>
     </div>
 </body>
 </html>

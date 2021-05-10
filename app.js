@@ -96,12 +96,6 @@ const checkAnswer = (e) => {
 
 closeBtn.addEventListener('click', closeModal)
 submitBtn.addEventListener('click', checkAnswer)
-// const question = questionObject.
-// const getQuestion = () => {
-//     for (let i = 0; i < questionObject.value.length; i++) {
-//         let 
-//     }
-// }
 
 let click = 0
 const startGame = () => {
@@ -109,6 +103,7 @@ const startGame = () => {
         box.addEventListener('click', (e) => {
             click++
             if (e.currentTarget === sports_100 && click === 1) {
+                sports_100.innerText = ''
                 modal_question.innerText = questionObject.Q1.question
                 openModal()
             }

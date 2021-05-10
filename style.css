@@ -43,6 +43,7 @@ body {
     color: white;
 }
 
+/* Flex Text in the Category Boxes */
 .cat-1-item, .cat-2-item, .cat-3-item, .cat-4-item, .cat-5-item {
     align-self: center;
     text-align: center;
@@ -53,3 +54,47 @@ body {
     background-color: rgb(32, 92, 255);
 }
 
+#modal {
+    background-color: rgb(32, 92, 255, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+
+#modal-textbox {
+	background-color: rgb(41, 62, 255);
+	height: 350px;
+	width: 550px;
+	border-radius: 5px;
+	margin: 150px auto;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+	padding: 2%;
+    display: flex;
+    flex-direction: column;
+}
+
+#question-text {
+    display: flex;
+    font-size: 3em;
+    justify-content: space-around;
+    color: white;
+    margin-bottom: 60px;
+}
+
+#answer-form {
+    font-size: 3em;
+    color: white;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 60px;
+}
+
+#modal-footer {
+	margin-left: auto;
+    margin-right: auto;
+    align-items: baseline;
+}
