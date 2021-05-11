@@ -41,7 +41,10 @@ const modal_answer = document.getElementById('answer-text')
 const modal = document.getElementById('modal')
 const closeBtn = document.getElementById('close')
 const submitBtn = document.getElementById('submit-button')
-const playerAnswer = document.getElementById('player-answer')
+const scoreBoard = document.getElementById('scoreboard-text')
+const startBtn = document.getElementById('start-button')
+const restartBtn = document.getElementById('restart-button')
+
 
 
 const questionObject = {
@@ -77,39 +80,110 @@ const questionObject = {
         }
 }
 
-
 const openModal = () => {
     modal.style.display = 'block'
 }
 
 const closeModal = () => {
+    document.getElementById('player-answer').value = ''
     modal.style.display = 'none'
 }
 
-const checkAnswer = (e) => {
-    if (playerAnswer === e.currentTarget.answer) {
-        // increase points properly 
-        //close the model
-        //make the question box on the board go away
-    }
-}
 
 closeBtn.addEventListener('click', closeModal)
-submitBtn.addEventListener('click', checkAnswer)
+
 
 let click = 0
+let currentScore = 0
 const startGame = () => {
+    
     document.querySelectorAll('.question-box').forEach((box) => {
         box.addEventListener('click', (e) => {
             click++
-            if (e.currentTarget === sports_100 && click === 1) {
+            if (e.currentTarget === sports_100) {
                 sports_100.innerText = ''
                 modal_question.innerText = questionObject.Q1.question
+                let answer = questionObject.Q1.answer
+                let value = questionObject.Q1.value
                 openModal()
+                submitBtn.addEventListener('click', () => {
+                    let playerAnswer = document.getElementById('player-answer').value
+                    if (playerAnswer === answer) {
+                        modal_question.innerText = 'That\'s Correct!'
+                        currentScore = currentScore + value
+                        scoreBoard.innerText = currentScore
+                    } else {
+                        modal_question.innerText = 'That\'s Incorrect. The correct answer is ' + '"' + answer + '".'
+                    }
+                })
+            } else if (e.currentTarget === sports_200) {
+                sports_200.innerText = ''
+                modal_question.innerText = questionObject.Q2.question
+                let answer = questionObject.Q2.answer
+                let value = questionObject.Q2.value
+                openModal()
+                submitBtn.addEventListener('click', () => {
+                    let playerAnswer = document.getElementById('player-answer').value
+                    if (playerAnswer === answer) {
+                        modal_question.innerText = 'That\'s Correct!'
+                        currentScore = currentScore + value
+                        scoreBoard.innerText = currentScore
+                    } else {
+                        modal_question.innerText = 'That\'s Incorrect. The correct answer is ' + '"' + answer + '".'
+                    }
+                })
+            } else if (e.currentTarget === sports_300) {
+                sports_300.innerText = ''
+                modal_question.innerText = questionObject.Q3.question
+                let answer = questionObject.Q3.answer
+                let value = questionObject.Q3.value
+                openModal()
+                submitBtn.addEventListener('click', () => {
+                    let playerAnswer = document.getElementById('player-answer').value
+                    if (playerAnswer === answer) {
+                        modal_question.innerText = 'That\'s Correct!'
+                        currentScore = currentScore + value
+                        scoreBoard.innerText = currentScore
+                    } else {
+                        modal_question.innerText = 'That\'s Incorrect. The correct answer is ' + '"' + answer + '".'
+                    }
+                })
+            } else if (e.currentTarget === sports_400) {
+                sports_400.innerText = ''
+                modal_question.innerText = questionObject.Q4.question
+                let answer = questionObject.Q4.answer
+                let value = questionObject.Q4.value
+                openModal()
+                submitBtn.addEventListener('click', () => {
+                    let playerAnswer = document.getElementById('player-answer').value
+                    if (playerAnswer === answer) {
+                        modal_question.innerText = 'That\'s Correct!'
+                        currentScore = currentScore + value
+                        scoreBoard.innerText = currentScore
+                    } else {
+                        modal_question.innerText = 'That\'s Incorrect. The correct answer is ' + '"' + answer + '".'
+                    }
+                })
+            } else if (e.currentTarget === sports_500) {
+                sports_500.innerText = ''
+                modal_question.innerText = questionObject.Q5.question
+                let answer = questionObject.Q5.answer
+                let value = questionObject.Q5.value
+                openModal()
+                submitBtn.addEventListener('click', () => {
+                    let playerAnswer = document.getElementById('player-answer').value
+                    if (playerAnswer === answer) {
+                        modal_question.innerText = 'That\'s Correct!'
+                        currentScore = currentScore + value
+                        scoreBoard.innerText = currentScore
+                    } else {
+                        modal_question.innerText = 'That\'s Incorrect. The correct answer is ' + '"' + answer + '".'
+                    }
+                })
             }
         })
     })
 }
 
-
-startGame()
+startBtn.addEventListener('click', startGame)
+restartBtn.addEventListener('click', startGame)

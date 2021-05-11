@@ -6,6 +6,43 @@ body {
     text-align: center;
 }
 
+#navigation {
+    display: inline-block;
+}
+
+#scoreboard-container {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 200px;
+    height: 100px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+#scoreboard-item {
+    display: flex;
+    background-color: blue;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 90%;
+    height: 80%;
+    align-items: center;
+    justify-content: center;
+}
+
+#scoreboard-text {
+    text-align: center;
+    color: white;
+    font-size: 3em;
+}
+
 #game-board-container {
     margin-left: auto;
     margin-right: auto;
@@ -93,8 +130,20 @@ body {
     margin-bottom: 60px;
 }
 
+#player-answer {
+    height: 40px;
+    width: 300px;
+    font-size: 15px;
+}
+
+#submit-button {
+    height: 45px;
+    width: 80px;
+}
+
 #modal-footer {
 	margin-left: auto;
     margin-right: auto;
     align-items: baseline;
 }
+
