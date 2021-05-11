@@ -184,6 +184,23 @@ const getAnswer = (e) => {
         modal_answer.innerText = answer
 }
 
+const checkWin = () => {
+        let scoreToBeat = 5250
+        if (currentScore > scoreToBeat) {
+                playerWon()
+        } else {
+                return
+        }
+}
+
+// const restartGame = () => {
+
+// }
+
+const playerWon = () => {
+        alert('Congratulations, you won!')
+        // restartGame()
+}
 
 let currentScore = 0
 const checkAnswer = (e) => {
@@ -199,6 +216,7 @@ const checkAnswer = (e) => {
                         modal_question.innerText = 'That\'s Incorrect. The correct answer is ' + '"' + answer + '".'
                 }
         })
+        checkWin()
 }
 
 closeBtn.addEventListener('click', closeModal)
@@ -216,4 +234,4 @@ const startGame = () => {
 }
 
 startBtn.addEventListener('click', startGame)
-// restartBtn.addEventListener('click', startGame)
+// restartBtn.addEventListener('click', restartGame)
