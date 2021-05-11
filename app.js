@@ -77,7 +77,127 @@ const questionObject = {
                 value: 500, 
                 question: 'Who has won more tennis grand slam titles, Venus Williams or Serena Williams?',
                 answer: 'Serena Williams'
-        }
+        },
+        Q6: {
+                category: 'Food & Drink',
+                value: 100,
+                question: 'What is the national spirit of America?',
+                answer: 'Bourbon',
+        },
+        Q7: {
+                category: 'Food & Drink',
+                value: 200,
+                question: 'What is the most iconic food item in Chicago city?',
+                answer: 'Deep-dish Pizza',
+        },
+        Q8: {
+                category: 'Food & Drink',
+                value: 300,
+                question: 'Name the main ingredient of mince-pie.',
+                answer: 'Dried Fruit',
+        },
+        Q9: {
+                category: 'Food & Drink',
+                value: 400,
+                question: 'What is the national dish of Germany?',
+                answer: 'Pot Roast',
+        },
+        Q10: {
+                category: 'Food & Drink',
+                value: 500,
+                question: 'Name the national drink of Scotland other than whiskey.',
+                answer: 'Irn-Bru',
+        },
+        Q11: {
+                category: 'Theatre',
+                value: 100,
+                question: 'The majority of Broadway shows are what?',
+                answer: 'Musicals',
+        },
+        Q12: {
+                category: 'Theatre',
+                value: 200,
+                question: 'Which Oscar-winning musical is getting a 2020 remake courtesy of Steven Spielberg?',
+                answer: 'West Side Story',
+        },
+        Q13: {
+                category: 'Theatre',
+                value: 300,
+                question: 'In Shakespeare’s King Lear, which of his three daughters really does love him and is true to him?',
+                answer: 'Cordelia',
+        },
+        Q14: {
+                category: 'Theatre',
+                value: 400,
+                question: 'The Bowery Theatre opened in what year?',
+                answer: '1826',
+        },
+        Q15: {
+                category: 'Theatre',
+                value: 500,
+                question: 'Beginning with The Red Mill, Broadway shows installed what outside the theatres?',
+                answer: 'Electric signs',
+        },
+        Q16: {
+                category: 'Music',
+                value: 100,
+                question: 'What was Elvis Presley\'s first hit in 1956?',
+                answer: 'Heartbreak Hotel',
+        },
+        Q17: {
+                category: 'Music',
+                value: 200,
+                question: 'Which famous music group was formerly known as the New Yardbirds?',
+                answer: 'Led Zeppelin',
+        },
+        Q18: {
+                category: 'Music',
+                value: 300,
+                question: 'Which singer is a godmother to Elton John\'s two sons?',
+                answer: 'Lady Gaga',
+        },
+        Q19: {
+                category: 'Music',
+                value: 400,
+                question: 'The Rock and Roll Hall of Fame is situated in what US State?',
+                answer: 'Ohio',
+        },
+        Q20: {
+                category: 'Music',
+                value: 500,
+                question: 'Which pop singer\'s real name is Robyn Fenty?',
+                answer: 'Rihanna',
+        },
+        Q21: {
+            category: 'Four Letter Words',
+            value: 100,
+            question: 'The triangular frame used to line up the billiard balls at the start of the game.',
+            answer: 'Rack',
+        },
+        Q22: {
+                category: 'Four Letter Words',
+                value: 200,
+                question: 'This word commonly follows cuff or missing. ',
+                answer: 'Link',
+        },
+        Q23: {
+                category: 'Four Letter Words',
+                value: 300,
+                question: 'From the Greek word for "deep sleep", it\'s a deep, prolonged unconsciousness.',
+                answer: 'Coma',
+        },
+        Q24: {
+                category: 'Four Letter Words',
+                value: 400,
+                question: 'The dry particles of matter found on your furniture or what you do to remove them.',
+                answer: 'Dust',
+        },
+        Q25: {
+                category: 'Four Letter Words',
+                value: 500,
+                question: 'The first name isn\'t on the "Keystone" of the house, but that of the Sennett.',
+                answer: 'Mack',
+        },
 }
 
 const openModal = () => {
@@ -111,7 +231,7 @@ const startGame = () => {
                     if (playerAnswer === answer) {
                         modal_question.innerText = 'That\'s Correct!'
                         currentScore = currentScore + value
-                        scoreBoard.innerText = currentScore
+                        scoreBoard.innerText = 'Score: ' + currentScore
                     } else {
                         modal_question.innerText = 'That\'s Incorrect. The correct answer is ' + '"' + answer + '".'
                     }
@@ -127,7 +247,7 @@ const startGame = () => {
                     if (playerAnswer === answer) {
                         modal_question.innerText = 'That\'s Correct!'
                         currentScore = currentScore + value
-                        scoreBoard.innerText = currentScore
+                        scoreBoard.innerText = 'Score: ' + currentScore
                     } else {
                         modal_question.innerText = 'That\'s Incorrect. The correct answer is ' + '"' + answer + '".'
                     }
@@ -143,7 +263,7 @@ const startGame = () => {
                     if (playerAnswer === answer) {
                         modal_question.innerText = 'That\'s Correct!'
                         currentScore = currentScore + value
-                        scoreBoard.innerText = currentScore
+                        scoreBoard.innerText = 'Score: ' + currentScore
                     } else {
                         modal_question.innerText = 'That\'s Incorrect. The correct answer is ' + '"' + answer + '".'
                     }
@@ -159,7 +279,7 @@ const startGame = () => {
                     if (playerAnswer === answer) {
                         modal_question.innerText = 'That\'s Correct!'
                         currentScore = currentScore + value
-                        scoreBoard.innerText = currentScore
+                        scoreBoard.innerText = 'Score: ' + currentScore
                     } else {
                         modal_question.innerText = 'That\'s Incorrect. The correct answer is ' + '"' + answer + '".'
                     }
@@ -175,7 +295,7 @@ const startGame = () => {
                     if (playerAnswer === answer) {
                         modal_question.innerText = 'That\'s Correct!'
                         currentScore = currentScore + value
-                        scoreBoard.innerText = currentScore
+                        scoreBoard.innerText = 'Score: ' + currentScore
                     } else {
                         modal_question.innerText = 'That\'s Incorrect. The correct answer is ' + '"' + answer + '".'
                     }
