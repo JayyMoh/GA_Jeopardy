@@ -215,7 +215,7 @@ const checkAnswer = (e) => {
                 if (playerAnswer === answer) {
                         modal_question.innerText = 'That\'s Correct!'
                         currentScore = currentScore + value
-                        scoreBoard.innerText = 'Score: ' + currentScore
+                        scoreBoard.innerText = 'Your Score: ' + currentScore
                 } else {
                         modal_question.innerText = 'That\'s Incorrect. The correct answer is ' + '"' + answer + '".'
                 }
@@ -225,7 +225,7 @@ const checkAnswer = (e) => {
 
 let click = 0
 const startGame = () => {
-        scoreBoard.innerText = currentScore
+        scoreBoard.innerText = 'Your Score: ' + currentScore
         scoreToBeat.innerText = 'Score to Beat: ' + winningScore
         document.querySelectorAll('.question-box').forEach((box) => { 
                 box.addEventListener('click', (e) => {
