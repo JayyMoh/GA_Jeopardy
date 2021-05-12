@@ -7,6 +7,7 @@ const modal = document.getElementById('modal')
 const closeBtn = document.getElementById('close')
 const submitBtn = document.getElementById('submit-button')
 const scoreBoard = document.getElementById('scoreboard-text')
+const scoreToBeat = document.getElementById('score-to-beat-text')
 const startBtn = document.getElementById('start-button')
 const restartBtn = document.getElementById('restart-button')
 
@@ -101,7 +102,7 @@ const questionObject = {
                 category: 'Theatre',
                 value: 500,
                 question: 'Beginning with The Red Mill, Broadway shows installed what outside the theatres?',
-                answer: 'Electric signs',
+                answer: 'Electric Signs',
         },
         music1: {
                 category: 'Music',
@@ -165,7 +166,7 @@ const questionObject = {
         },
 }
 
-const idArray = [sports1, sports2, sports3, sports4]
+
 
 const openModal = () => {
     modal.style.display = 'block'
@@ -186,9 +187,9 @@ const getAnswer = (e) => {
         modal_answer.innerText = answer
 }
 
+
 const checkWin = () => {
-        let scoreToBeat = 5000
-        if (currentScore > scoreToBeat) {
+        if (currentScore > winningScore) {
                 playerWon()
         } else {
                 return
@@ -200,9 +201,12 @@ const playerWon = () => {
         restartGame()
 }
 
-
+const removeClick = (e) => {
+        e.currentTarget.removeEventListener('click', startGame)
+}       
 
 let currentScore = 0
+let winningScore = 4000
 const checkAnswer = (e) => {
         let answer = questionObject[e.currentTarget.id].answer
         let value = questionObject[e.currentTarget.id].value
@@ -215,21 +219,23 @@ const checkAnswer = (e) => {
                 } else {
                         modal_question.innerText = 'That\'s Incorrect. The correct answer is ' + '"' + answer + '".'
                 }
+                checkWin()
         })
 }
 
 let click = 0
 const startGame = () => {
         scoreBoard.innerText = currentScore
+        scoreToBeat.innerText = 'Score to Beat: ' + winningScore
         document.querySelectorAll('.question-box').forEach((box) => { 
-        box.addEventListener('click', (e) => {
-                e.currentTarget.innerText = ''
-                getQuestion(e)
-                openModal(e)
-                checkAnswer(e)
-                checkWin()
+                box.addEventListener('click', (e) => {
+                        e.currentTarget.innerText = ''
+                        getQuestion(e)
+                        openModal(e)
+                        checkAnswer(e)
+                        removeClick(e)
+                })
         })
-    })
 }
 
 const restartGame = () => {

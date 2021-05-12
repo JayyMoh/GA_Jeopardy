@@ -13,12 +13,12 @@ body {
 #scoreboard-container {
     display: flex;
     align-self: center;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     background-color: gray;
     border: 2px solid black;
     border-radius: 5px;
-    width: 200px;
+    width: 450px;
     height: 100px;
     margin-bottom: 20px;
     margin-left: auto;
@@ -26,18 +26,18 @@ body {
     margin-top: 20px;
 }
 
-#scoreboard-item {
+#scoreboard-item, #score-to-beat-item {
     display: flex;
     background-color: blue;
     border: 2px solid black;
     border-radius: 5px;
-    width: 90%;
+    width: 46%;
     height: 80%;
     align-items: center;
     justify-content: center;
 }
 
-#scoreboard-text {
+#scoreboard-text, #score-to-beat-text {
     text-align: center;
     color: white;
     font-size: 2em;
