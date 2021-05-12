@@ -134,10 +134,10 @@ const questionObject = {
                 answer: 'Rihanna',
         },
         flw1: {
-            category: 'Four Letter Words',
-            value: 100,
-            question: 'The triangular frame used to line up the billiard balls at the start of the game.',
-            answer: 'Rack',
+                category: 'Four Letter Words',
+                value: 100,
+                question: 'The triangular frame used to line up the billiard balls at the start of the game.',
+                answer: 'Rack',
         },
         flw2: {
                 category: 'Four Letter Words',
@@ -165,6 +165,8 @@ const questionObject = {
         },
 }
 
+const idArray = [sports1, sports2, sports3, sports4]
+
 const openModal = () => {
     modal.style.display = 'block'
 }
@@ -185,7 +187,7 @@ const getAnswer = (e) => {
 }
 
 const checkWin = () => {
-        let scoreToBeat = 5250
+        let scoreToBeat = 5000
         if (currentScore > scoreToBeat) {
                 playerWon()
         } else {
@@ -193,14 +195,12 @@ const checkWin = () => {
         }
 }
 
-// const restartGame = () => {
-
-// }
-
 const playerWon = () => {
         alert('Congratulations, you won!')
-        // restartGame()
+        restartGame()
 }
+
+
 
 let currentScore = 0
 const checkAnswer = (e) => {
@@ -216,22 +216,54 @@ const checkAnswer = (e) => {
                         modal_question.innerText = 'That\'s Incorrect. The correct answer is ' + '"' + answer + '".'
                 }
         })
-        checkWin()
 }
 
-closeBtn.addEventListener('click', closeModal)
 let click = 0
 const startGame = () => {
-    click++
-    document.querySelectorAll('.question-box').forEach((box) => { 
+        scoreBoard.innerText = currentScore
+        document.querySelectorAll('.question-box').forEach((box) => { 
         box.addEventListener('click', (e) => {
                 e.currentTarget.innerText = ''
                 getQuestion(e)
                 openModal(e)
                 checkAnswer(e)
+                checkWin()
         })
     })
 }
 
+const restartGame = () => {
+        // reset the gameboxes to original view
+        scoreBoard.innerText = ''
+        currentScore = 0
+        document.getElementById('sports1').innerText = '100'
+        document.getElementById('fnD1').innerText = '100'
+        document.getElementById('theatre1').innerText = '100'
+        document.getElementById('music1').innerText = '100'
+        document.getElementById('flw1').innerText = '100'
+        document.getElementById('sports2').innerText = '200'
+        document.getElementById('fnD2').innerText = '200'
+        document.getElementById('theatre2').innerText = '200'
+        document.getElementById('music2').innerText = '200'
+        document.getElementById('flw2').innerText = '200'
+        document.getElementById('sports3').innerText = '300'
+        document.getElementById('fnD3').innerText = '300'
+        document.getElementById('theatre3').innerText = '300'
+        document.getElementById('music3').innerText = '300'
+        document.getElementById('flw3').innerText = '300'
+        document.getElementById('sports4').innerText = '400'
+        document.getElementById('fnD4').innerText = '400'
+        document.getElementById('theatre4').innerText = '400'
+        document.getElementById('music4').innerText = '400'
+        document.getElementById('flw4').innerText = '400'
+        document.getElementById('sports5').innerText = '500'
+        document.getElementById('fnD5').innerText = '500'
+        document.getElementById('theatre5').innerText = '500'
+        document.getElementById('music5').innerText = '500'
+        document.getElementById('flw5').innerText = '500'
+}
+
+
+closeBtn.addEventListener('click', closeModal)
 startBtn.addEventListener('click', startGame)
-// restartBtn.addEventListener('click', restartGame)
+restartBtn.addEventListener('click', restartGame)
