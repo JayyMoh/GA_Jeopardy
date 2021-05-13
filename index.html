@@ -6,24 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/app.js" defer></script>
     <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <title>Jeopardy</title>
 </head>
 <body>
     <div id="header">
         <h1>Jeopardy</h1>
-        <nav id="navigation">
-            <button id="start-button">Start Game</button>
-            <button id="restart-button">Restart Game</button>
-        </nav>
-    </div>
-    <div id="scoreboard-container">
-        <div id="score-to-beat-item">
-            <p id="score-to-beat-text"></p>
+        <div id="scoreboard-container">
+            <div id="score-to-beat-item">
+                <p id="score-to-beat-text"></p>
+            </div>
+            <div id="scoreboard-item">
+                <p id="scoreboard-text"></p>
+            </div>
         </div>
-        <div id="scoreboard-item">
-            <p id="scoreboard-text"></p>
-        </div>
-    </div>
+        <button id="start-button">Start Game</button>
+        <button id="restart-button">Restart Game</button>
+    </div>    
     <div id="game-board-container">
         <!-- row one -->
         <div class="board-item cat-1 category">

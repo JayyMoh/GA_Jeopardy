@@ -202,7 +202,7 @@ const playerWon = () => {
 }
 
 const removeClick = (e) => {
-        e.currentTarget.removeEventListener('click', startGame)
+        e.currentTarget.removeEventListener('click', openModal)
 }       
 
 let currentScore = 0
@@ -230,10 +230,10 @@ const startGame = () => {
         document.querySelectorAll('.question-box').forEach((box) => { 
                 box.addEventListener('click', (e) => {
                         e.currentTarget.innerText = ''
+                        removeClick(e)
                         getQuestion(e)
                         openModal(e)
                         checkAnswer(e)
-                        removeClick(e)
                 })
         })
 }
@@ -242,6 +242,7 @@ const restartGame = () => {
         // reset the gameboxes to original view
         scoreBoard.innerText = ''
         currentScore = 0
+
         document.getElementById('sports1').innerText = '100'
         document.getElementById('fnD1').innerText = '100'
         document.getElementById('theatre1').innerText = '100'
