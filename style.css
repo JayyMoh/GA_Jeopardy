@@ -30,6 +30,7 @@ h1 {
 }
 
 #start-button, #game-rules {
+    cursor: pointer;
     align-self: center;
     margin-left: 10px;
     margin-right: 10px;
@@ -118,8 +119,15 @@ h1 {
 
 /* Question Boxes */
 .question-box {
+    cursor: pointer;
     background-color: rgb(32, 92, 255);
 }
+
+.question-box:hover {
+    background-color: rgba(32, 92, 255, 0.5);
+}
+
+
 
 #modal {
     background-color: rgb(32, 92, 255, .5);
