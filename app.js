@@ -191,12 +191,12 @@ const getQuestion = (e) => {
 //         modal_answer.innerText = answer
 // }
 
-
+let maxScore = 7500
 const checkWin = () => {
         if (currentScore > winningScore) {
                 playerWon()
-        } else {
-                return
+        } else if (questionsRemaining === 0 && currentScore < winningScore) {
+                playerLost()
         }
 }
 
@@ -205,9 +205,16 @@ const playerWon = () => {
         restartGame()
 }  
 
+const playerLost = () => {
+        alert('It look\'s like you didn\'t get enough questions correct to win. Better luck next time!' )
+}
+
 let currentScore = 0
 let winningScore = 4000
+let questionsRemaining = 25
 const checkAnswer = (e) => {
+        questionsRemaining--
+        console.log(questionsRemaining)
         let answer = questionObject[e.currentTarget.id].answer
         let value = questionObject[e.currentTarget.id].value
         submitBtn.addEventListener('click', () => {
@@ -219,7 +226,6 @@ const checkAnswer = (e) => {
                 } else {
                         modal_question.innerText = 'That\'s Incorrect. The correct answer is ' + '"' + answer + '".'
                 }
-                checkWin()
         })
 }
 
@@ -236,7 +242,7 @@ const restartGame = () => {
         // reset the gameboxes to original view
         scoreBoard.innerText = ''
         currentScore = 0
-
+        questionsRemaining = 25
         document.getElementById('sports1').innerText = '100'
         document.getElementById('fnD1').innerText = '100'
         document.getElementById('theatre1').innerText = '100'
