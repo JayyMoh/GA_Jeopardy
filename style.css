@@ -26,22 +26,16 @@ h1 {
     margin-left: 10px;
     margin-right: 10px;
     color: white;
+    margin-left: 10px;
 }
 
-#start-button {
+#start-button, #restart-button {
     align-self: center;
     margin-left: 10px;
     margin-right: 10px;
     height: 40px;
     width: 10%;
-}
-
-#restart-button {
-    align-self: center;
-    margin-left: 10px;
-    margin-right: 10px;
-    height: 40px;
-    width: 10%;
+    border-radius: 5px;
 }
 
 #scoreboard-container {

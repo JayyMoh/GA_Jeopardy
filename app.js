@@ -168,8 +168,12 @@ const questionObject = {
 
 
 
-const openModal = () => {
+const openModal = (e) => {
     modal.style.display = 'block'
+    e.currentTarget.innerText = ''
+    getQuestion(e)
+    checkAnswer(e)
+    checkWin()
 }
 
 const closeModal = () => {
@@ -182,10 +186,10 @@ const getQuestion = (e) => {
         modal_question.innerText = question
 }
 
-const getAnswer = (e) => {
-        let answer = questionObject[e.currentTarget.id].answer
-        modal_answer.innerText = answer
-}
+// const getAnswer = (e) => {
+//         let answer = questionObject[e.currentTarget.id].answer
+//         modal_answer.innerText = answer
+// }
 
 
 const checkWin = () => {
@@ -199,11 +203,7 @@ const checkWin = () => {
 const playerWon = () => {
         alert('Congratulations, you won!')
         restartGame()
-}
-
-const removeClick = (e) => {
-        e.currentTarget.removeEventListener('click', openModal)
-}       
+}  
 
 let currentScore = 0
 let winningScore = 4000
@@ -214,8 +214,8 @@ const checkAnswer = (e) => {
                 let playerAnswer = document.getElementById('player-answer').value
                 if (playerAnswer === answer) {
                         modal_question.innerText = 'That\'s Correct!'
-                        updatedScore = currentScore + value
-                        scoreBoard.innerText = 'Your Score: ' + updatedScore
+                        currentScore = currentScore + value
+                        scoreBoard.innerText = 'Your Score: ' + currentScore
                 } else {
                         modal_question.innerText = 'That\'s Incorrect. The correct answer is ' + '"' + answer + '".'
                 }
@@ -227,14 +227,8 @@ let click = 0
 const startGame = () => {
         scoreBoard.innerText = 'Your Score: ' + currentScore
         scoreToBeat.innerText = 'Score to Beat: ' + winningScore
-        document.querySelectorAll('.question-box').forEach((box) => { 
-                box.addEventListener('click', (e) => {
-                        e.currentTarget.innerText = ''
-                        removeClick(e)
-                        getQuestion(e)
-                        openModal(e)
-                        checkAnswer(e)
-                })
+        document.querySelectorAll('.question-box').forEach((box) => {             
+                box.addEventListener('click', openModal, {once: true})
         })
 }
 
