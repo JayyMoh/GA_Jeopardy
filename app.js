@@ -9,8 +9,8 @@ const submitBtn = document.getElementById('submit-button')
 const scoreBoard = document.getElementById('scoreboard-text')
 const scoreToBeat = document.getElementById('score-to-beat-text')
 const startBtn = document.getElementById('start-button')
-const restartBtn = document.getElementById('restart-button')
-
+const gameRules = document.getElementById('game-rules')
+const answerForm = document.getElementById('answer-form')
 
 
 const questionObject = {
@@ -166,19 +166,28 @@ const questionObject = {
         },
 }
 
+const rulesModal = () => {
+        modal.style.display = 'block'
+        answerForm.style.display = 'none'
+        modal_question.style.fontSize = '23px'
+        modal_question.innerText = 'Welcome to Jeopardy! Once you close out of these rules you can start the game at anytime by clicking start game button. Once the game is started your score will begin to track in the window next to the score to beat. You may choose any question from the board worth any value by clicking on the value boxes under the category. You will then be prompted with the question as well as an answer box below the question. Type your answer (the answers are case sensitive) in the answer box and then click submit. Try to answer enough questions of value to pass the score to beat.'
+}
 
+setTimeout(rulesModal, 1000)
 
 const openModal = (e) => {
-    modal.style.display = 'block'
-    e.currentTarget.innerText = ''
-    getQuestion(e)
-    checkAnswer(e)
-    checkWin()
+        answerForm.style.display = 'block'
+        modal_question.style.fontSize = '2em'
+        modal.style.display = 'block'
+        e.currentTarget.innerText = ''
+        getQuestion(e)
+        checkAnswer(e)
 }
 
 const closeModal = () => {
-    document.getElementById('player-answer').value = ''
-    modal.style.display = 'none'
+        document.getElementById('player-answer').value = ''
+        modal.style.display = 'none'
+        checkWin()
 }
 
 const getQuestion = (e) => {
@@ -186,12 +195,7 @@ const getQuestion = (e) => {
         modal_question.innerText = question
 }
 
-// const getAnswer = (e) => {
-//         let answer = questionObject[e.currentTarget.id].answer
-//         modal_answer.innerText = answer
-// }
 
-let maxScore = 7500
 const checkWin = () => {
         if (currentScore > winningScore) {
                 playerWon()
@@ -226,7 +230,7 @@ const checkAnswer = (e) => {
                 } else {
                         modal_question.innerText = 'That\'s Incorrect. The correct answer is ' + '"' + answer + '".'
                 }
-        })
+        }) 
 }
 
 let click = 0
@@ -273,4 +277,4 @@ const restartGame = () => {
 
 closeBtn.addEventListener('click', closeModal)
 startBtn.addEventListener('click', startGame)
-restartBtn.addEventListener('click', restartGame)
+gameRules.addEventListener('click', rulesModal)
