@@ -214,8 +214,8 @@ const checkAnswer = (e) => {
                 let playerAnswer = document.getElementById('player-answer').value
                 if (playerAnswer === answer) {
                         modal_question.innerText = 'That\'s Correct!'
-                        currentScore = currentScore + value
-                        scoreBoard.innerText = 'Your Score: ' + currentScore
+                        updatedScore = currentScore + value
+                        scoreBoard.innerText = 'Your Score: ' + updatedScore
                 } else {
                         modal_question.innerText = 'That\'s Incorrect. The correct answer is ' + '"' + answer + '".'
                 }
