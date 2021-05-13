@@ -12,3 +12,8 @@ Jeopardy Link: https://jayymoh.github.io/
 
 ## Wireframe
 ![Jeopardy Board Wireframe](https://media.discordapp.net/attachments/822281280615219211/842201433276809246/Jeopardy_wireframe.PNG?width=995&height=676)
+
+## Future Development
+- Create a time limit per question
+- Allow the user to play multiple rounds with different questions
+- Add Daily Double
