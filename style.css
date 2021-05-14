@@ -239,8 +239,8 @@ h1 {
     }
 }
 
-/* Screen width under 400px */
-@media (max-width: 400px) {
+/* Screen width under 450px */
+@media (max-width: 450px) {
     #scoreboard-text, #score-to-beat-text {
         font-size: .5em;
     }
