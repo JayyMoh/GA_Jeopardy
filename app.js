@@ -1,4 +1,3 @@
-console.log('JS is connected')
 
 // Varibales for the Modal
 const modal_question = document.getElementById('question-text')
@@ -218,7 +217,6 @@ let winningScore = 4000
 let questionsRemaining = 25
 const checkAnswer = (e) => {
         questionsRemaining--
-        console.log(questionsRemaining)
         let answer = questionObject[e.currentTarget.id].answer
         let value = questionObject[e.currentTarget.id].value
         submitBtn.addEventListener('click', () => {
