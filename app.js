@@ -165,11 +165,13 @@ const questionObject = {
         },
 }
 
+
+// Modal that pops up almost immediately that tells the player the rules
 const rulesModal = () => {
         modal.style.display = 'block'
         answerForm.style.display = 'none'
         modal_question.style.fontSize = '23px'
-        modal_question.innerText = 'Welcome to Jeopardy! Once you close out of these rules you can start the game at anytime by clicking start game button. Once the game is started your score will begin to track in the window next to the score to beat. You may choose any question from the board worth any value by clicking on the value boxes under the category. You will then be prompted with the question as well as an answer box below the question. Type your answer (the answers are case sensitive) in the answer box and then click submit. Try to answer enough questions of value to pass the score to beat.'
+        modal_question.innerText = 'Welcome to Jeopardy! Once you close out of these rules you can start the game at anytime by clicking the start game button. Once the game is started your score will begin to track in the window next to the score to beat. You may choose any question from the board worth any value by clicking on the value boxes under the category. You will then be prompted with the question as well as an answer box below the question. Type your answer (the answers are case sensitive) in the answer box and then click submit. Try to answer enough questions of value to pass the score to beat.'
 }
 
 setTimeout(rulesModal, 1000)
@@ -194,7 +196,7 @@ const getQuestion = (e) => {
         modal_question.innerText = question
 }
 
-
+// checks if the player has won
 const checkWin = () => {
         if (currentScore > winningScore) {
                 playerWon()
@@ -231,15 +233,16 @@ const checkAnswer = (e) => {
         }) 
 }
 
-let click = 0
+// This function makes the scoreboard live and creates the event listeners for the boxes
 const startGame = () => {
         scoreBoard.innerText = 'Your Score: ' + currentScore
         scoreToBeat.innerText = 'Score to Beat: ' + winningScore
-        document.querySelectorAll('.question-box').forEach((box) => {             
-                box.addEventListener('click', openModal, {once: true})
+        document.querySelectorAll('.question-box').forEach((e) => {             
+                e.addEventListener('click', openModal, {once: true})
         })
 }
 
+// future development to restart the game and reset the board
 const restartGame = () => {
         // reset the gameboxes to original view
         scoreBoard.innerText = ''
